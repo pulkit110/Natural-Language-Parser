@@ -1,0 +1,125 @@
+This file contains no useful information for the parser. It however
+stores a record of building rules and which sentences we considered to add a
+rule to the database.  This is important to understand the though process
+involved in the rule generation process.
+
+S -> VP
+S -> NP VP
+VP -> VBZ VP
+VP -> VBZ RB VP
+VP -> VBG PP
+VP -> VBG NP
+VP -> VBG
+VP -> V NP
+NN -> NNP
+PP -> IN NP
+NP -> DT NP
+NP -> NP PP
+NP -> NN
+
+---------------------
+REMOVED
+NP -> VBG NNS
+NP -> DT
+NP -> NP NP NP
+NP -> NP NP
+NP -> NP NP NP NP
+NP -> JJ
+NP -> CD JJ NN NNS
+NP -> ADJP NNS
+NP -> ADJP NN
+NP -> JJ NN NNS
+NP -> JJ NN NN
+NP -> JJ NNS
+NP -> JJ NN NN CC NN NN
+NP -> CD NN
+NP -> DT JJ NNS
+NP -> DT JJ NN
+NP -> DT NN NN
+NP -> DT JJ NN NN
+NP -> DT NN NN
+NP -> NN NN
+PP -> CC NP
+--------------------
+TRIED BUT REMOVED
+
+VP -> VP NP
+S -> NP , VP , VP
+----------------
+
+ADDED
+
+NP -> DT NP
+VP -> VBZ ADJP
+
+NP -> NNP ADJP
+ADJP -> , S ,
+ADJP -> RB JJ
+NP -> DT ADJP NNS
+NP -> ADJP NNS
+NP -> ADJP NN
+S -> NP , VP        //Whenever in doubt, ask Google.
+
+ADJP -> IN RB NP    //The politician is a man of kindly nature.
+NP -> NP ADJP       // -----------------"--------------------
+
+NP -> DT            // This is my computer.
+VP -> VBZ RB NP     // This is not my computer.
+NP -> NN POS        // someone's
+
+NP -> NN RB POS     // anybody else's
+NP -> NNS RB POS
+
+PP -> CC NP         // but mine.
+ADJP -> JJ RBR      // few more rules
+NP -> JJ NP         // 15th November 2010
+
+NP -> JJ NN         // 1 other location
+NP -> CD NP         // 1 other location
+ADJP -> JJ PP       // open in 1 other location.
+
+VP -> VBP VBN NP
+
+VP -> RB VP         //Nationality/NN of/IN cricketers/NNS should/MD not/RB matter/VB in/IN IPL/NNP
+
+NP -> VBP NN        // fudge sundae
+ADJP -> ADJP PP     // more comforting than a hot fudge sundae
+
+VP -> VBN NP
+NP -> NP NP
+NP -> NP POS
+
+NP -> PDT DT NP     // all the search engines
+NP -> PDT NP        // all search engines
+ADJP -> PDT DT JJ   // all the available
+ADJP -> PDT JJ      // all available
+S -> PP , S         // Of all the available search engines, Google is the  best.
+NP -> DT JJS        // the best.
+PP -> IN DT         // of all.
+VP -> VBZ PP        // ... who ilves in Allahabad.
+
+WHNP -> WP VP       // Who lives in India?
+S -> WHNP           // Who lives in India?
+
+S -> WRB SQ         // Where does he live?
+SQ -> VBZ NP        // Where does he live?
+VP -> VB            // Where does he live?
+SQ -> VBZ NP RB     // Why is he here?
+
+VP -> VBZ RB        // Why isn't he here?
+NP -> NP RB         // Why isn't he here?
+S -> WRB VP NP      // Why isn't he here?
+
+S -> WRB VP         // Where is he?
+
+VP -> VBN           // Where has he gone?
+
+VP -> VBG           //  Where is he going?
+
+VP -> VB RB         // Go there.
+
+S -> S CC S         // John/NNP gave/VBD Mark/NNP a/DT present/JJ and/CC he/PRP said/VBD thanks/NNS .
+NP -> EX            // There are two friends.
+NP -> DT JJ         // John gave Mark a present and he said thanks.
+? There are two friends.
+? John gave Mark a present and he said thanks.
